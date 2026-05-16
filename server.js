@@ -1,5 +1,6 @@
 // server.js
-
+// Load env variables
+require('dotenv').config(
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise'); // <-- Use the promise-based version
