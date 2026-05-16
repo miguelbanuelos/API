@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api-service:
+    build: .                 # <--- Esto le dice que use tu Dockerfile local
+    image: node_api    # El nombre que tú quieras darle localmente
+    container_name: node_api
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true
